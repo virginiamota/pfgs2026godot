@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://nuf87yedhpna"]
+
+[ext_resource type="Texture2D" uid="uid://c3krhvl2jjxin" path="res://sprites/mesa/mesa.png" id="1_0rx7m"]
+[ext_resource type="Script" uid="uid://c3mum8twtjkky" path="res://scripts/mesa.gd" id="2_mesa"]
+[ext_resource type="Texture2D" uid="uid://cvig8u6hwpsh8" path="res://sprites/mesa/mesa_gaveta1.png" id="3_gaveta1"]
+[ext_resource type="Texture2D" uid="uid://wqdsnkaulu14" path="res://sprites/mesa/mesa_gaveta2.png" id="4_gaveta2"]
+[ext_resource type="AudioStream" uid="uid://sjydywqcige2" path="res://audios/gaveta_abre.ogg" id="5_sabr"]
+[ext_resource type="AudioStream" uid="uid://7joy1u8ly0h0" path="res://audios/gaveta_fecha.ogg" id="6_sfch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6ghg"]
+size = Vector2(70, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rx7m"]
+size = Vector2(70, 55)
+
+[node name="Mesa" type="Area2D" unique_id=959194041]
+script = ExtResource("2_mesa")
+sprite_fechada = ExtResource("1_0rx7m")
+sprite_gaveta1 = ExtResource("3_gaveta1")
+sprite_gaveta2 = ExtResource("4_gaveta2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=556486591]
+texture = ExtResource("1_0rx7m")
+
+[node name="gaveta1" type="CollisionShape2D" parent="." unique_id=909132962]
+position = Vector2(-145, -95)
+shape = SubResource("RectangleShape2D_k6ghg")
+
+[node name="gaveta2" type="CollisionShape2D" parent="." unique_id=896373710]
+position = Vector2(-75, -75)
+shape = SubResource("RectangleShape2D_0rx7m")
+
+[node name="SomAbrir" type="AudioStreamPlayer" parent="." unique_id=847293615]
+stream = ExtResource("5_sabr")
+
+[node name="SomFechar" type="AudioStreamPlayer" parent="." unique_id=192837465]
+stream = ExtResource("6_sfch")

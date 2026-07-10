@@ -1,0 +1,828 @@
+[gd_scene format=3 uid="uid://bkv2vjqtto3a6"]
+
+[ext_resource type="Texture2D" uid="uid://uv6hm867mqc8" path="res://sprites/quarto/background.png" id="1_4ghp8"]
+[ext_resource type="Script" uid="uid://bkpmovdv2eyr4" path="res://scripts/player_controller.gd" id="2_kl2w7"]
+[ext_resource type="PackedScene" uid="uid://480ptdbqjosh" path="res://scenes/Diario.tscn" id="2_vq0a4"]
+[ext_resource type="Script" uid="uid://d2pb36r7u0b6" path="res://scripts/cama.gd" id="4_kl2w7"]
+[ext_resource type="Texture2D" uid="uid://q1lxjrdyrro7" path="res://sprites/cama/cama.png" id="5_cama"]
+[ext_resource type="Texture2D" uid="uid://bhtx1u4b5vsg6" path="res://sprites/cama/travesseiro.png" id="6_trav"]
+[ext_resource type="PackedScene" uid="uid://nuf87yedhpna" path="res://scenes/mesa.tscn" id="7_8u7m2"]
+[ext_resource type="Script" uid="uid://1ypiverqdsky" path="res://scripts/escolha_panel.gd" id="7_kv5t0"]
+[ext_resource type="Texture2D" uid="uid://cgt5dcqgvbfc0" path="res://sprites/cama/travesseiro_aberto.png" id="7_trava"]
+[ext_resource type="Script" uid="uid://dscfy0f68fhkf" path="res://scripts/inspecao_diario.gd" id="8_8u7m2"]
+[ext_resource type="Texture2D" uid="uid://cqbu4117mbtwb" path="res://sprites/diario/diario.png" id="9_ffh5x"]
+[ext_resource type="Script" uid="uid://bg26gjq6cqicq" path="res://scripts/gaveta_panel.gd" id="10_gvtp"]
+[ext_resource type="Script" uid="uid://c7158tehua3ph" path="res://scripts/inspecao_gaveta.gd" id="11_inspg"]
+[ext_resource type="Texture2D" uid="uid://cvv1gjrixmj23" path="res://sprites/mesa/gaveta/gaveta_perto.png" id="12_gvt"]
+[ext_resource type="Script" uid="uid://c5ursnhcama2k" path="res://scripts/ursinho_cama.gd" id="13_urscm"]
+[ext_resource type="Script" uid="uid://cinvtbarra4kp" path="res://scripts/inventario.gd" id="14_invt"]
+[ext_resource type="Texture2D" uid="uid://pohamuf27r0d" path="res://sprites/brinquedos/ursinho/ursinho.png" id="15_urs"]
+[ext_resource type="Texture2D" uid="uid://bbojcqoxpsdh2" path="res://sprites/brinquedos/ursinho/ursinho_fantasma.png" id="16_ursf"]
+[ext_resource type="Script" uid="uid://cmural4kp2x7a" path="res://scripts/mural.gd" id="17_mural"]
+[ext_resource type="Script" uid="uid://cinspmural3k2" path="res://scripts/inspecao_mural.gd" id="18_inspm"]
+[ext_resource type="Texture2D" uid="uid://culy5cxw31er5" path="res://sprites/mural/mural.png" id="19_murtx"]
+[ext_resource type="Script" uid="uid://cdsnhrbsc4k2p" path="res://scripts/desenho_rabiscado.gd" id="20_dsrb"]
+[ext_resource type="Texture2D" uid="uid://dlbqagyhtnksh" path="res://sprites/desenho_rabiscado/desenho_r.png" id="21_dsnh"]
+[ext_resource type="Texture2D" uid="uid://ct8cabei43ic8" path="res://sprites/desenho_rabiscado/rabisco.png" id="22_rbsc"]
+[ext_resource type="Script" uid="uid://cjanela4k2p7x" path="res://scripts/janela.gd" id="23_janl"]
+[ext_resource type="Texture2D" uid="uid://bb1tm7ox8s5hp" path="res://sprites/quarto/janela_fechada.png" id="24_janf"]
+[ext_resource type="Texture2D" uid="uid://dqah6nnddk8jf" path="res://sprites/quarto/janela_aberta.png" id="25_jana"]
+[ext_resource type="Script" uid="uid://cintrpt3k2p4x" path="res://scripts/interruptor.gd" id="26_intr"]
+[ext_resource type="Texture2D" uid="uid://du0dq4k1dm6eu" path="res://sprites/quarto/interruptor.png" id="27_intx"]
+[ext_resource type="Texture2D" uid="uid://b188rb4kbdfr1" path="res://sprites/quarto/tapete.png" id="28_tap"]
+[ext_resource type="Texture2D" uid="uid://dyt32g7beih7d" path="res://sprites/mural/mural_perto.png" id="29_mrlp"]
+[ext_resource type="Texture2D" uid="uid://b8v686ymosm21" path="res://sprites/mural/desenho1.png" id="30_d1"]
+[ext_resource type="Texture2D" uid="uid://b2xacbqymshsn" path="res://sprites/mural/desenho2.png" id="31_d2"]
+[ext_resource type="Texture2D" uid="uid://e13eegofyf1c" path="res://sprites/mural/desenho3.png" id="32_d3"]
+[ext_resource type="Script" uid="uid://cinsppst3k24x" path="res://scripts/inspecao_pasta.gd" id="33_ipst"]
+[ext_resource type="Texture2D" uid="uid://25xtc5edq3ny" path="res://sprites/material_escolar/pasta_escolar.png" id="34_pst"]
+[ext_resource type="Texture2D" uid="uid://cvci28u7bfxpd" path="res://sprites/material_escolar/escola1.png" id="35_e1"]
+[ext_resource type="Texture2D" uid="uid://2njj0c6mestm" path="res://sprites/material_escolar/escola2.png" id="36_e2"]
+[ext_resource type="AudioStream" uid="uid://cx5d6fape3umw" path="res://audios/janela_abre.ogg" id="37_jabr"]
+[ext_resource type="AudioStream" uid="uid://bkyacqj2e2det" path="res://audios/janela_fecha.ogg" id="38_jfch"]
+[ext_resource type="AudioStream" uid="uid://d31f2rxf06lyb" path="res://audios/luz.ogg" id="39_luz"]
+[ext_resource type="Script" uid="uid://cprogrsso3k2p" path="res://scripts/progresso.gd" id="40_prog"]
+[ext_resource type="Texture2D" uid="uid://v7bsicjv1wwc" path="res://sprites/progresso/notas.png" id="41_nts"]
+[ext_resource type="Texture2D" uid="uid://b1d0jj3i0myuh" path="res://sprites/progresso/progresso.png" id="42_prgf"]
+[ext_resource type="Texture2D" uid="uid://bxasqtyrhhfq0" path="res://sprites/progresso/olho.png" id="43_olho"]
+[ext_resource type="Texture2D" uid="uid://cjj5f01ggygeu" path="res://sprites/progresso/cadeado.png" id="44_cdd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_janela"]
+size = Vector2(677, 295)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_intr"]
+size = Vector2(40, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trav"]
+size = Vector2(314, 84)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mural"]
+size = Vector2(183, 183)
+
+[node name="Quarto" type="Node2D" unique_id=1951737358]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=85004562]
+texture = ExtResource("1_4ghp8")
+
+[node name="Luz" type="CanvasModulate" parent="." unique_id=1092837465]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1823962596]
+
+[node name="PlayerController" type="Node" parent="." unique_id=1294443557]
+script = ExtResource("2_kl2w7")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1595269002]
+
+[node name="Objetos" type="Node2D" parent="." unique_id=1492979819]
+
+[node name="Tapete" type="Sprite2D" parent="Objetos" unique_id=1728394650]
+position = Vector2(0, 413)
+texture = ExtResource("28_tap")
+
+[node name="Janela" type="Area2D" parent="Objetos" unique_id=1583920476]
+position = Vector2(0, -33)
+script = ExtResource("23_janl")
+sprite_fechada = ExtResource("24_janf")
+sprite_aberta = ExtResource("25_jana")
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/Janela" unique_id=1937465820]
+texture = ExtResource("24_janf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/Janela" unique_id=1846203957]
+shape = SubResource("RectangleShape2D_janela")
+
+[node name="SomAbrir" type="AudioStreamPlayer" parent="Objetos/Janela" unique_id=1648293750]
+stream = ExtResource("37_jabr")
+
+[node name="SomFechar" type="AudioStreamPlayer" parent="Objetos/Janela" unique_id=1829304756]
+stream = ExtResource("38_jfch")
+
+[node name="Interruptor" type="Area2D" parent="Objetos" unique_id=1657483921]
+position = Vector2(-472, 145)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("26_intr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/Interruptor" unique_id=1120394857]
+texture = ExtResource("27_intx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/Interruptor" unique_id=1029487563]
+shape = SubResource("RectangleShape2D_intr")
+
+[node name="Som" type="AudioStreamPlayer" parent="Objetos/Interruptor" unique_id=1738492056]
+stream = ExtResource("39_luz")
+
+[node name="Cama" type="Area2D" parent="Objetos" unique_id=307208295 groups=["cama"]]
+position = Vector2(-897, 230)
+script = ExtResource("4_kl2w7")
+sprite_fechada = ExtResource("6_trav")
+sprite_aberta = ExtResource("7_trava")
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/Cama" unique_id=1908686157]
+position = Vector2(-35, 29)
+texture = ExtResource("5_cama")
+
+[node name="Travesseiro" type="Sprite2D" parent="Objetos/Cama" unique_id=1364857291]
+position = Vector2(63, -87)
+texture = ExtResource("6_trav")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/Cama" unique_id=1837376499]
+position = Vector2(70, -87)
+shape = SubResource("RectangleShape2D_trav")
+
+[node name="Diario" parent="Objetos" unique_id=1876718501 instance=ExtResource("2_vq0a4")]
+position = Vector2(-735, 151)
+scale = Vector2(0.7, 0.7)
+
+[node name="UrsinhoCama" type="Sprite2D" parent="Objetos" unique_id=1764023981 groups=["ursinho_cama"]]
+position = Vector2(-882, 242)
+scale = Vector2(1.2676052, 1.1999998)
+texture = ExtResource("16_ursf")
+script = ExtResource("13_urscm")
+sprite_ursinho = ExtResource("15_urs")
+sprite_fantasma = ExtResource("16_ursf")
+
+[node name="Mesa" parent="Objetos" unique_id=959194041 groups=["mesa"] instance=ExtResource("7_8u7m2")]
+position = Vector2(1102, 316)
+
+[node name="Mural" type="Area2D" parent="Objetos" unique_id=1358209476]
+position = Vector2(1235, -67)
+script = ExtResource("17_mural")
+
+[node name="Sprite2D" type="Sprite2D" parent="Objetos/Mural" unique_id=847361925]
+texture = ExtResource("19_murtx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/Mural" unique_id=1936482057]
+shape = SubResource("RectangleShape2D_mural")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2116517443]
+
+[node name="EscolhaPanel" type="Panel" parent="CanvasLayer" unique_id=169257902 groups=["escolha_panel"]]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -150.0
+offset_right = 400.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_kv5t0")
+
+[node name="Label" type="Label" parent="CanvasLayer/EscolhaPanel" unique_id=950452972]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 24.0
+offset_right = -20.0
+offset_bottom = 130.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Você encontrou um diário escondido.
+
+O que deseja fazer?"
+horizontal_alignment = 1
+
+[node name="BotaoCapa" type="Button" parent="CanvasLayer/EscolhaPanel" unique_id=992268805]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -100.0
+offset_right = 380.0
+offset_bottom = -40.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Observar apenas a capa"
+
+[node name="BotaoPrivacidade" type="Button" parent="CanvasLayer/EscolhaPanel" unique_id=1308523367]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -380.0
+offset_top = -100.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Respeitar a privacidade"
+
+[node name="InspecaoDiario" type="Control" parent="CanvasLayer" unique_id=1560950867]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_8u7m2")
+
+[node name="Fundo" type="ColorRect" parent="CanvasLayer/InspecaoDiario" unique_id=1093847261]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/InspecaoDiario" unique_id=1879042536]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -350.0
+offset_right = 250.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_ffh5x")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BotaoVoltar" type="Button" parent="CanvasLayer/InspecaoDiario" unique_id=1253138574]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -100.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
+[node name="GavetaPanel" type="Panel" parent="CanvasLayer" unique_id=734998462 groups=["gaveta_panel"]]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -150.0
+offset_right = 400.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_gvtp")
+
+[node name="Label" type="Label" parent="CanvasLayer/GavetaPanel" unique_id=1120881054]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 24.0
+offset_right = -20.0
+offset_bottom = 130.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Você abriu uma gaveta.
+
+O que deseja fazer?"
+horizontal_alignment = 1
+
+[node name="BotaoOlhar" type="Button" parent="CanvasLayer/GavetaPanel" unique_id=150447678]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -100.0
+offset_right = 380.0
+offset_bottom = -40.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Olhar gaveta"
+
+[node name="BotaoFechar" type="Button" parent="CanvasLayer/GavetaPanel" unique_id=1733059189]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -380.0
+offset_top = -100.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Fechar"
+
+[node name="InspecaoGaveta" type="Control" parent="CanvasLayer" unique_id=627502737 groups=["inspecao_gaveta"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_inspg")
+
+[node name="Fundo" type="ColorRect" parent="CanvasLayer/InspecaoGaveta" unique_id=1482755185]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="InteriorGaveta" type="TextureRect" parent="CanvasLayer/InspecaoGaveta" unique_id=1614327678]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_gvt")
+expand_mode = 1
+
+[node name="ObjetosGaveta" type="Control" parent="CanvasLayer/InspecaoGaveta" unique_id=982374651]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DesenhoRabiscado" type="TextureRect" parent="CanvasLayer/InspecaoGaveta/ObjetosGaveta" unique_id=1029384756]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -190.0
+offset_right = -183.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("21_dsnh")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("20_dsrb")
+
+[node name="Rabisco" type="TextureRect" parent="CanvasLayer/InspecaoGaveta/ObjetosGaveta/DesenhoRabiscado" unique_id=1847293651]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -159.0
+offset_right = 108.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("22_rbsc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PastaEscolar" type="TextureRect" parent="CanvasLayer/InspecaoGaveta/ObjetosGaveta" unique_id=1573920486]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 160.0
+offset_top = -227.0
+offset_right = 502.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("34_pst")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="UrsinhoGaveta" type="TextureRect" parent="CanvasLayer/InspecaoGaveta/ObjetosGaveta" unique_id=459817223]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.0
+offset_top = -130.0
+offset_right = 142.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_urs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BotaoVoltar" type="Button" parent="CanvasLayer/InspecaoGaveta" unique_id=603148665]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -100.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
+[node name="InspecaoMural" type="Control" parent="CanvasLayer" unique_id=1745092836 groups=["inspecao_mural"]]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("18_inspm")
+
+[node name="Fundo" type="ColorRect" parent="CanvasLayer/InspecaoMural" unique_id=923847156]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.85)
+
+[node name="Imagem" type="TextureRect" parent="CanvasLayer/InspecaoMural" unique_id=584736291]
+layout_mode = 0
+offset_right = 3500.0
+offset_bottom = 1860.0
+mouse_filter = 2
+texture = ExtResource("29_mrlp")
+expand_mode = 1
+
+[node name="Desenho1" type="TextureRect" parent="CanvasLayer/InspecaoMural/Imagem" unique_id=1394857203]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 240.0
+offset_right = 640.0
+offset_bottom = 712.0
+mouse_filter = 0
+texture = ExtResource("30_d1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Desenho2" type="TextureRect" parent="CanvasLayer/InspecaoMural/Imagem" unique_id=1750293846]
+layout_mode = 0
+offset_left = 2170.0
+offset_top = 330.0
+offset_right = 2898.0
+offset_bottom = 726.0
+mouse_filter = 0
+texture = ExtResource("31_d2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Desenho3" type="TextureRect" parent="CanvasLayer/InspecaoMural/Imagem" unique_id=1846029375]
+layout_mode = 0
+offset_left = 1010.0
+offset_top = 1040.0
+offset_right = 1386.0
+offset_bottom = 1396.0
+mouse_filter = 0
+texture = ExtResource("32_d3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BotaoVoltar" type="Button" parent="CanvasLayer/InspecaoMural" unique_id=273645981]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
+[node name="InspecaoPasta" type="Control" parent="CanvasLayer" unique_id=1657392048 groups=["inspecao_pasta"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("33_ipst")
+paginas = Array[Texture2D]([ExtResource("34_pst"), ExtResource("35_e1"), ExtResource("36_e2")])
+
+[node name="Fundo" type="ColorRect" parent="CanvasLayer/InspecaoPasta" unique_id=1937584620]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Pagina" type="TextureRect" parent="CanvasLayer/InspecaoPasta" unique_id=1029384657]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -378.0
+offset_right = 285.0
+offset_bottom = 377.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("34_pst")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BotaoVoltar" type="Button" parent="CanvasLayer/InspecaoPasta" unique_id=1573829461]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -100.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
+[node name="Inventario" type="CanvasLayer" parent="." unique_id=1287345960]
+script = ExtResource("14_invt")
+
+[node name="Barra" type="VBoxContainer" parent="Inventario" unique_id=768234519]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -60.0
+offset_right = -30.0
+offset_bottom = 60.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Slot" type="Panel" parent="Inventario/Barra" unique_id=345987120]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+
+[node name="IconeUrsinho" type="TextureRect" parent="Inventario/Barra/Slot" unique_id=894561237]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("15_urs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SlotDesenho" type="Panel" parent="Inventario/Barra" unique_id=736459182]
+visible = false
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+
+[node name="IconeDesenho" type="TextureRect" parent="Inventario/Barra/SlotDesenho" unique_id=918273645]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("21_dsnh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Arrasto" type="TextureRect" parent="Inventario" unique_id=657483920]
+visible = false
+offset_right = 150.0
+offset_bottom = 100.0
+mouse_filter = 2
+texture = ExtResource("15_urs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Progresso" type="CanvasLayer" parent="." unique_id=1849302756]
+script = ExtResource("40_prog")
+
+[node name="IconeNotas" type="TextureRect" parent="Progresso" unique_id=1039485726]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.0
+offset_top = 20.0
+offset_right = -30.0
+offset_bottom = 155.0
+grow_horizontal = 0
+mouse_filter = 0
+texture = ExtResource("41_nts")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Painel" type="Control" parent="Progresso" unique_id=1749382056]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="ColorRect" parent="Progresso/Painel" unique_id=1938475620]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Folha" type="TextureRect" parent="Progresso/Painel" unique_id=1102938475]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -398.0
+offset_right = 295.0
+offset_bottom = 397.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("42_prgf")
+expand_mode = 1
+
+[node name="ItemDiario" type="TextureRect" parent="Progresso/Painel/Folha" unique_id=1564738291]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 90.0
+offset_right = 200.0
+offset_bottom = 230.0
+mouse_filter = 2
+texture = ExtResource("9_ffh5x")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Olho" type="TextureRect" parent="Progresso/Painel/Folha/ItemDiario" unique_id=1029475863]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -43.0
+offset_right = 35.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("43_olho")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Cadeado" type="TextureRect" parent="Progresso/Painel/Folha/ItemDiario" unique_id=1876953024]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -43.0
+offset_right = 43.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("44_cdd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemUrsinho" type="TextureRect" parent="Progresso/Painel/Folha" unique_id=1230984756]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 90.0
+offset_right = 490.0
+offset_bottom = 230.0
+mouse_filter = 2
+texture = ExtResource("15_urs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemDesenhoLimpo" type="TextureRect" parent="Progresso/Painel/Folha" unique_id=1657849302]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 300.0
+offset_right = 200.0
+offset_bottom = 440.0
+mouse_filter = 2
+texture = ExtResource("21_dsnh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemDesenho1" type="TextureRect" parent="Progresso/Painel/Folha" unique_id=1394875620]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 300.0
+offset_right = 490.0
+offset_bottom = 440.0
+mouse_filter = 2
+texture = ExtResource("30_d1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemDesenho2" type="TextureRect" parent="Progresso/Painel/Folha" unique_id=1748293056]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 510.0
+offset_right = 200.0
+offset_bottom = 650.0
+mouse_filter = 2
+texture = ExtResource("31_d2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemDesenho3" type="TextureRect" parent="Progresso/Painel/Folha" unique_id=1029384765]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 510.0
+offset_right = 490.0
+offset_bottom = 650.0
+mouse_filter = 2
+texture = ExtResource("32_d3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BotaoVoltar" type="Button" parent="Progresso/Painel" unique_id=1560293847]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -100.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
+[connection signal="pressed" from="CanvasLayer/EscolhaPanel/BotaoCapa" to="CanvasLayer/EscolhaPanel" method="_on_botao_capa_pressed"]
+[connection signal="pressed" from="CanvasLayer/EscolhaPanel/BotaoPrivacidade" to="CanvasLayer/EscolhaPanel" method="_on_botao_privacidade_pressed"]
+[connection signal="pressed" from="CanvasLayer/InspecaoDiario/BotaoVoltar" to="CanvasLayer/InspecaoDiario" method="_on_botao_voltar_pressed"]
+[connection signal="pressed" from="CanvasLayer/GavetaPanel/BotaoOlhar" to="CanvasLayer/GavetaPanel" method="_on_botao_olhar_pressed"]
+[connection signal="pressed" from="CanvasLayer/GavetaPanel/BotaoFechar" to="CanvasLayer/GavetaPanel" method="_on_botao_fechar_pressed"]
+[connection signal="gui_input" from="CanvasLayer/InspecaoGaveta/ObjetosGaveta/PastaEscolar" to="CanvasLayer/InspecaoGaveta" method="_on_pasta_escolar_gui_input"]
+[connection signal="gui_input" from="CanvasLayer/InspecaoGaveta/ObjetosGaveta/UrsinhoGaveta" to="CanvasLayer/InspecaoGaveta" method="_on_ursinho_gaveta_gui_input"]
+[connection signal="pressed" from="CanvasLayer/InspecaoGaveta/BotaoVoltar" to="CanvasLayer/InspecaoGaveta" method="_on_botao_voltar_pressed"]
+[connection signal="pressed" from="CanvasLayer/InspecaoMural/BotaoVoltar" to="CanvasLayer/InspecaoMural" method="_on_botao_voltar_pressed"]
+[connection signal="gui_input" from="CanvasLayer/InspecaoPasta/Pagina" to="CanvasLayer/InspecaoPasta" method="_on_pagina_gui_input"]
+[connection signal="pressed" from="CanvasLayer/InspecaoPasta/BotaoVoltar" to="CanvasLayer/InspecaoPasta" method="_on_botao_voltar_pressed"]
+[connection signal="gui_input" from="Inventario/Barra/Slot/IconeUrsinho" to="Inventario" method="_on_icone_ursinho_gui_input"]
+[connection signal="gui_input" from="Inventario/Barra/SlotDesenho/IconeDesenho" to="Inventario" method="_on_icone_desenho_gui_input"]
+[connection signal="gui_input" from="Progresso/IconeNotas" to="Progresso" method="_on_icone_notas_gui_input"]
+[connection signal="pressed" from="Progresso/Painel/BotaoVoltar" to="Progresso" method="_on_botao_voltar_pressed"]
