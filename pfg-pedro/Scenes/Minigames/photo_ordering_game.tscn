@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://c3ctbquqlt8xu"]
+
+[ext_resource type="PackedScene" uid="uid://brf8vy2p6c0p1" path="res://Scenes/photo_slot.tscn" id="1_b6l5f"]
+[ext_resource type="Script" uid="uid://voiwddht40r0" path="res://Scripts/Minigames/photo_ordering_game.gd" id="1_fnxm6"]
+
+[node name="PhotoOrderingGame" type="Control" unique_id=282493616]
+layout_mode = 3
+anchors_preset = 0
+accessibility_name = "Minigame de ordenação de fotos"
+accessibility_description = "Organize as seis fotos na ordem correta. Selecione uma foto e depois outra para trocar suas posições."
+script = ExtResource("1_fnxm6")
+
+[node name="PhotoSlot1" parent="." unique_id=1679444217 instance=ExtResource("1_b6l5f")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 328.0
+offset_top = 59.0
+offset_right = 541.0
+offset_bottom = 211.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="PhotoSlot2" parent="." unique_id=400170339 instance=ExtResource("1_b6l5f")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 152.0
+offset_top = 236.0
+offset_right = 365.0
+offset_bottom = 388.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="PhotoSlot3" parent="." unique_id=183232353 instance=ExtResource("1_b6l5f")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 300.0
+offset_top = 414.0
+offset_right = 513.0
+offset_bottom = 566.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="PhotoSlot4" parent="." unique_id=578867077 instance=ExtResource("1_b6l5f")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 635.0
+offset_top = 45.0
+offset_right = 848.0
+offset_bottom = 197.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="PhotoSlot5" parent="." unique_id=1163644322 instance=ExtResource("1_b6l5f")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 815.0
+offset_top = 236.0
+offset_right = 1028.0
+offset_bottom = 388.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="PhotoSlot6" parent="." unique_id=1188773800 instance=ExtResource("1_b6l5f")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 703.0
+offset_top = 414.0
+offset_right = 916.0
+offset_bottom = 566.0
+grow_horizontal = 1
+grow_vertical = 1

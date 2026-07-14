@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://b7tcmumgh8uu4"]
+
+[ext_resource type="Texture2D" uid="uid://d1gn5c11xltxc" path="res://Assets/Album/background.png" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://bj6yh0cxcui2y" path="res://Scripts/album_manager.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://bmcr0ce4fw6o1" path="res://Scripts/UI/ui_button.gd" id="2_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://wuly0t5rs553" path="res://Assets/UI/left-arrow.svg" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://om5pnwba355" path="res://Assets/UI/right-arrow.svg" id="4_lquwl"]
+
+[node name="MainNode" type="Node2D" unique_id=1812385700]
+
+[node name="AlbumManager" type="Node" parent="." unique_id=944115392]
+script = ExtResource("1_h2yge")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2025124468]
+
+[node name="Album" type="Control" parent="UI" unique_id=2140555319]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+accessibility_name = "Álbum de fotos"
+accessibility_description = "Área principal do álbum. Contém as páginas, os minigames e os botões de navegação."
+
+[node name="AlbumBackground" type="TextureRect" parent="UI/Album" unique_id=1616044556]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -63.0
+offset_top = -2.0
+offset_right = 98.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_0xm2m")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="PreviousPageButton" type="Control" parent="UI/Album" unique_id=923065610]
+z_index = 10
+anchors_preset = 0
+offset_left = 50.0
+offset_top = 270.0
+offset_right = 120.0
+offset_bottom = 390.0
+mouse_filter = 2
+accessibility_name = "Página Anterior"
+accessibility_description = "Volta para a página anterior."
+script = ExtResource("2_1bvp3")
+icon = ExtResource("4_lquwl")
+
+[node name="Button" type="TextureButton" parent="UI/Album/PreviousPageButton" unique_id=619846249]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Shadow" type="TextureRect" parent="UI/Album/PreviousPageButton" unique_id=1167148409]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NextPageButton" type="Control" parent="UI/Album" unique_id=167911293]
+z_index = 10
+anchors_preset = 0
+offset_left = 1050.0
+offset_top = 270.0
+offset_right = 1120.0
+offset_bottom = 390.0
+mouse_filter = 2
+accessibility_name = "Próxima página"
+accessibility_description = "Avança para a próxima página do álbum."
+script = ExtResource("2_1bvp3")
+icon = ExtResource("3_1bvp3")
+shadow_offset_x = -4.0
+
+[node name="Button" type="TextureButton" parent="UI/Album/NextPageButton" unique_id=974540675]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Shadow" type="TextureRect" parent="UI/Album/NextPageButton" unique_id=1741909219]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PageGameContainer" type="Control" parent="UI/Album" unique_id=1923088765]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="PageNumber" type="Label" parent="UI/Album" unique_id=1598595561]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+accessibility_name = "Numero da Página"
+accessibility_description = "Numero da Página"

@@ -1,0 +1,10 @@
+# Godot 4+
+.godot/
+
+
+# macOS
+
+**/.DS_Store
+.DS_Store
+._*
+__MACOSX/
