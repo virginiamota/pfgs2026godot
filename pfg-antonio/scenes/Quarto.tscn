@@ -46,6 +46,9 @@
 [ext_resource type="Texture2D" uid="uid://b1d0jj3i0myuh" path="res://sprites/progresso/progresso.png" id="42_prgf"]
 [ext_resource type="Texture2D" uid="uid://bxasqtyrhhfq0" path="res://sprites/progresso/olho.png" id="43_olho"]
 [ext_resource type="Texture2D" uid="uid://cjj5f01ggygeu" path="res://sprites/progresso/cadeado.png" id="44_cdd"]
+[ext_resource type="Script" uid="uid://cmenuacss3k2p" path="res://scripts/menu_acessibilidade.gd" id="45_macs"]
+[ext_resource type="Texture2D" uid="uid://c15y65d5o35lt" path="res://sprites/ui/accessibility.png" id="48_vmbo3"]
+[ext_resource type="Texture2D" uid="uid://i1a8eidyn8ra" path="res://sprites/ui/lampada.png" id="49_s33xl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_janela"]
 size = Vector2(677, 295)
@@ -79,7 +82,7 @@ script = ExtResource("2_kl2w7")
 position = Vector2(0, 413)
 texture = ExtResource("28_tap")
 
-[node name="Janela" type="Area2D" parent="Objetos" unique_id=1583920476]
+[node name="Janela" type="Area2D" parent="Objetos" unique_id=1583920476 groups=["objeto_interativo"]]
 position = Vector2(0, -33)
 script = ExtResource("23_janl")
 sprite_fechada = ExtResource("24_janf")
@@ -97,7 +100,7 @@ stream = ExtResource("37_jabr")
 [node name="SomFechar" type="AudioStreamPlayer" parent="Objetos/Janela" unique_id=1829304756]
 stream = ExtResource("38_jfch")
 
-[node name="Interruptor" type="Area2D" parent="Objetos" unique_id=1657483921]
+[node name="Interruptor" type="Area2D" parent="Objetos" unique_id=1657483921 groups=["objeto_interativo"]]
 position = Vector2(-472, 145)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("26_intr")
@@ -111,7 +114,7 @@ shape = SubResource("RectangleShape2D_intr")
 [node name="Som" type="AudioStreamPlayer" parent="Objetos/Interruptor" unique_id=1738492056]
 stream = ExtResource("39_luz")
 
-[node name="Cama" type="Area2D" parent="Objetos" unique_id=307208295 groups=["cama"]]
+[node name="Cama" type="Area2D" parent="Objetos" unique_id=307208295 groups=["cama", "objeto_interativo"]]
 position = Vector2(-897, 230)
 script = ExtResource("4_kl2w7")
 sprite_fechada = ExtResource("6_trav")
@@ -129,7 +132,7 @@ texture = ExtResource("6_trav")
 position = Vector2(70, -87)
 shape = SubResource("RectangleShape2D_trav")
 
-[node name="Diario" parent="Objetos" unique_id=1876718501 instance=ExtResource("2_vq0a4")]
+[node name="Diario" parent="Objetos" unique_id=1876718501 groups=["objeto_interativo"] instance=ExtResource("2_vq0a4")]
 position = Vector2(-735, 151)
 scale = Vector2(0.7, 0.7)
 
@@ -141,10 +144,10 @@ script = ExtResource("13_urscm")
 sprite_ursinho = ExtResource("15_urs")
 sprite_fantasma = ExtResource("16_ursf")
 
-[node name="Mesa" parent="Objetos" unique_id=959194041 groups=["mesa"] instance=ExtResource("7_8u7m2")]
+[node name="Mesa" parent="Objetos" unique_id=959194041 groups=["mesa", "objeto_interativo"] instance=ExtResource("7_8u7m2")]
 position = Vector2(1102, 316)
 
-[node name="Mural" type="Area2D" parent="Objetos" unique_id=1358209476]
+[node name="Mural" type="Area2D" parent="Objetos" unique_id=1358209476 groups=["objeto_interativo"]]
 position = Vector2(1235, -67)
 script = ExtResource("17_mural")
 
@@ -156,7 +159,7 @@ shape = SubResource("RectangleShape2D_mural")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2116517443]
 
-[node name="EscolhaPanel" type="Panel" parent="CanvasLayer" unique_id=169257902 groups=["escolha_panel"]]
+[node name="EscolhaPanel" type="Panel" parent="CanvasLayer" unique_id=169257902 groups=["escolha_panel", "painel_ui"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -214,7 +217,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 24
 text = "Respeitar a privacidade"
 
-[node name="InspecaoDiario" type="Control" parent="CanvasLayer" unique_id=1560950867]
+[node name="InspecaoDiario" type="Control" parent="CanvasLayer" unique_id=1560950867 groups=["painel_ui"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -265,7 +268,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 24
 text = "Voltar"
 
-[node name="GavetaPanel" type="Panel" parent="CanvasLayer" unique_id=734998462 groups=["gaveta_panel"]]
+[node name="GavetaPanel" type="Panel" parent="CanvasLayer" unique_id=734998462 groups=["gaveta_panel", "painel_ui"]]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -323,7 +326,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 24
 text = "Fechar"
 
-[node name="InspecaoGaveta" type="Control" parent="CanvasLayer" unique_id=627502737 groups=["inspecao_gaveta"]]
+[node name="InspecaoGaveta" type="Control" parent="CanvasLayer" unique_id=627502737 groups=["inspecao_gaveta", "painel_ui"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -448,7 +451,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 24
 text = "Voltar"
 
-[node name="InspecaoMural" type="Control" parent="CanvasLayer" unique_id=1745092836 groups=["inspecao_mural"]]
+[node name="InspecaoMural" type="Control" parent="CanvasLayer" unique_id=1745092836 groups=["inspecao_mural", "painel_ui"]]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
@@ -524,7 +527,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 24
 text = "Voltar"
 
-[node name="InspecaoPasta" type="Control" parent="CanvasLayer" unique_id=1657392048 groups=["inspecao_pasta"]]
+[node name="InspecaoPasta" type="Control" parent="CanvasLayer" unique_id=1657392048 groups=["inspecao_pasta", "painel_ui"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -660,7 +663,7 @@ texture = ExtResource("41_nts")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Painel" type="Control" parent="Progresso" unique_id=1749382056]
+[node name="Painel" type="Control" parent="Progresso" unique_id=1749382056 groups=["painel_ui"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -811,6 +814,190 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 24
 text = "Voltar"
 
+[node name="MenuAcessibilidade" type="CanvasLayer" parent="." unique_id=1948302716]
+script = ExtResource("45_macs")
+
+[node name="BotaoMenu" type="TextureRect" parent="MenuAcessibilidade" unique_id=1029386471]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 140.0
+offset_bottom = 140.0
+mouse_filter = 0
+texture = ExtResource("48_vmbo3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="IconeDica" type="TextureRect" parent="MenuAcessibilidade" unique_id=1364958272]
+visible = false
+offset_left = 20.0
+offset_top = 150.0
+offset_right = 140.0
+offset_bottom = 270.0
+mouse_filter = 0
+texture = ExtResource("49_s33xl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LegendaSom" type="Label" parent="MenuAcessibilidade" unique_id=1837465921]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -160.0
+offset_right = 400.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "[legenda]"
+horizontal_alignment = 1
+
+[node name="Dica" type="Label" parent="MenuAcessibilidade" unique_id=1120395866]
+visible = false
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 120.0
+offset_top = 24.0
+offset_right = -160.0
+offset_bottom = 74.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.96, 0.75, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "Dica"
+horizontal_alignment = 1
+
+[node name="Painel" type="Control" parent="MenuAcessibilidade" unique_id=1746253809 groups=["painel_ui"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fundo" type="ColorRect" parent="MenuAcessibilidade/Painel" unique_id=1120983746]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.75)
+
+[node name="Titulo" type="Label" parent="MenuAcessibilidade/Painel" unique_id=1657382910]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 40.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "Acessibilidade"
+horizontal_alignment = 1
+
+[node name="Lista" type="VBoxContainer" parent="MenuAcessibilidade/Painel" unique_id=1364950287]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -360.0
+offset_right = 350.0
+offset_bottom = 380.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="SecaoMotora" type="Label" parent="MenuAcessibilidade/Painel/Lista" unique_id=1847302915]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Motora"
+
+[node name="OpcaoHitbox" type="CheckBox" parent="MenuAcessibilidade/Painel/Lista" unique_id=1102938476]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Áreas clicáveis ampliadas"
+
+[node name="OpcaoTeclado" type="CheckBox" parent="MenuAcessibilidade/Painel/Lista" unique_id=1394857206]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Navegação por teclado (em desenvolvimento)"
+
+[node name="SecaoCognitiva" type="Label" parent="MenuAcessibilidade/Painel/Lista" unique_id=1750293847]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Cognitiva"
+
+[node name="OpcaoDicas" type="CheckBox" parent="MenuAcessibilidade/Painel/Lista" unique_id=1846029376]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Dicas contextuais"
+
+[node name="SecaoVisual" type="Label" parent="MenuAcessibilidade/Painel/Lista" unique_id=1029384767]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Visual"
+
+[node name="OpcaoDestaque" type="CheckBox" parent="MenuAcessibilidade/Painel/Lista" unique_id=1938475622]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Destaque de objetos interativos"
+
+[node name="OpcaoFonte" type="CheckBox" parent="MenuAcessibilidade/Painel/Lista" unique_id=1573920487]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Fonte ampliada"
+
+[node name="SecaoAuditiva" type="Label" parent="MenuAcessibilidade/Painel/Lista" unique_id=1657849303]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Auditiva"
+
+[node name="OpcaoLegendas" type="CheckBox" parent="MenuAcessibilidade/Painel/Lista" unique_id=1394875621]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Legendas descritivas"
+
+[node name="SecaoGerais" type="Label" parent="MenuAcessibilidade/Painel/Lista" unique_id=1748293057]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Gerais"
+
+[node name="OpcaoWasd" type="CheckBox" parent="MenuAcessibilidade/Painel/Lista" unique_id=1748293058]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Controles alternativos (WASD)"
+
+[node name="OpcaoRemapear" type="CheckBox" parent="MenuAcessibilidade/Painel/Lista" unique_id=1029384768]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+disabled = true
+text = "Controles remapeáveis (planejado)"
+
+[node name="BotaoVoltar" type="Button" parent="MenuAcessibilidade/Painel" unique_id=1503827469]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -100.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
 [connection signal="pressed" from="CanvasLayer/EscolhaPanel/BotaoCapa" to="CanvasLayer/EscolhaPanel" method="_on_botao_capa_pressed"]
 [connection signal="pressed" from="CanvasLayer/EscolhaPanel/BotaoPrivacidade" to="CanvasLayer/EscolhaPanel" method="_on_botao_privacidade_pressed"]
 [connection signal="pressed" from="CanvasLayer/InspecaoDiario/BotaoVoltar" to="CanvasLayer/InspecaoDiario" method="_on_botao_voltar_pressed"]
@@ -826,3 +1013,6 @@ text = "Voltar"
 [connection signal="gui_input" from="Inventario/Barra/SlotDesenho/IconeDesenho" to="Inventario" method="_on_icone_desenho_gui_input"]
 [connection signal="gui_input" from="Progresso/IconeNotas" to="Progresso" method="_on_icone_notas_gui_input"]
 [connection signal="pressed" from="Progresso/Painel/BotaoVoltar" to="Progresso" method="_on_botao_voltar_pressed"]
+[connection signal="gui_input" from="MenuAcessibilidade/BotaoMenu" to="MenuAcessibilidade" method="_on_botao_menu_gui_input"]
+[connection signal="gui_input" from="MenuAcessibilidade/IconeDica" to="MenuAcessibilidade" method="_on_icone_dica_gui_input"]
+[connection signal="pressed" from="MenuAcessibilidade/Painel/BotaoVoltar" to="MenuAcessibilidade" method="_on_botao_voltar_pressed"]

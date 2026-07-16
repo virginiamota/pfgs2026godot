@@ -21,5 +21,7 @@ func alternar():
 
 	if ligado:
 		luz.color = Color(1, 1, 1)
+		Acessibilidade.legenda("[luz acende]")
 	else:
 		luz.color = Color(0.5, 0.5, 0.58)
+		Acessibilidade.legenda("[luz apaga]")

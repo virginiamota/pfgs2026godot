@@ -47,6 +47,8 @@ func abrir_gaveta(numero):
 
 	som_abrir.play()
 
+	Acessibilidade.legenda("[gaveta abre]")
+
 	EstadoJogo.ui_aberta = true
 
 	var painel = get_tree().get_first_node_in_group("gaveta_panel")
@@ -62,3 +64,5 @@ func fechar():
 	trocar_sprite(sprite_fechada)
 
 	som_fechar.play()
+
+	Acessibilidade.legenda("[gaveta fecha]")

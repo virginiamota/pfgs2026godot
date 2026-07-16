@@ -36,7 +36,11 @@ func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 
 		if EstadoJogo.desenho_estado == EstadoJogo.Desenho.RABISCADO:
-			iniciar_segurada()
+
+			chacoalhar()
+
+			if EstadoJogo.desenho_estado == EstadoJogo.Desenho.RABISCADO:
+				iniciar_segurada()
 
 		elif EstadoJogo.desenho_estado == EstadoJogo.Desenho.LIMPO:
 			coletar()

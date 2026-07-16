@@ -27,6 +27,8 @@ func alternar():
 	if aberta:
 		sprite.texture = sprite_aberta
 		som_abrir.play()
+		Acessibilidade.legenda("[janela abre]")
 	else:
 		sprite.texture = sprite_fechada
 		som_fechar.play()
+		Acessibilidade.legenda("[janela fecha]")
